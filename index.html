@@ -4,32 +4,80 @@
     <meta charset="UTF-8" />
     <title>Demo Voice Agent for Your Business</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <style>
-      body {
+      * {
+        box-sizing: border-box;
         margin: 0;
-        padding: 40px 20px;
-        font-family: Arial, sans-serif;
+        padding: 0;
+      }
+
+      body {
         background: #f4f4f4;
+        font-family: Arial, sans-serif;
+        padding: 40px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
       }
 
       h1 {
+        font-size: 22px;
         margin-bottom: 30px;
+        color: #333;
         text-align: center;
       }
 
-      iframe {
-        border: none;
+      elevenlabs-convai {
         width: 100%;
         max-width: 420px;
-        height: 600px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 30px 10px;
+        }
+
+        h1 {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
       }
     </style>
   </head>
   <body>
     <h1>🎤 Demo Voice Agent for Your Business</h1>
-    <iframe src="widget.html"></iframe>
+
+    <!-- ВСТАВЬ СВОЙ AGENT-ID -->
+    <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
+
+    <!-- ElevenLabs widget -->
+    <script
+      src="https://elevenlabs.io/convai-widget/index.js"
+      async
+      type="text/javascript"
+    ></script>
+
+    <!-- Скрипт для скрытия брендинга -->
+    <script>
+      const hideBranding = () => {
+        const targetTag = 'elevenlabs-convai';
+        const interval = setInterval(() => {
+          const widget = document.querySelector(targetTag);
+          if (widget && widget.shadowRoot) {
+            const branding = [...widget.shadowRoot.querySelectorAll('div')]
+              .find(el => el.textContent?.includes('Powered by ElevenLabs'));
+            if (branding) {
+              branding.style.display = 'none';
+              clearInterval(interval);
+            }
+          }
+        }, 500);
+      };
+
+      window.addEventListener('DOMContentLoaded', hideBranding);
+    </script>
   </body>
 </html>
