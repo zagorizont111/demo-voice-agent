@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agent Widget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #f4f4f4;
+        position: relative;
+      }
+
+      elevenlabs-convai {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .mask {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 80px;
+        width: 100%;
+        background: #f4f4f4;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <elevenlabs-convai agent-id="ВСТАВЬ_СЮДА_СВОЙ_AGENT_ID"></elevenlabs-convai>
+    <script src="https://elevenlabs.io/convai-widget/index.js" async></script>
+    <div class="mask"></div>
+  </body>
+</html>
