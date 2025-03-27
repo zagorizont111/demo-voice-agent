@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
-        background: #f4f4f4;
+        background: #9e9e9e; /* Цвет текста надписи */
         font-family: Arial, sans-serif;
         padding: 40px 20px;
         display: flex;
@@ -20,7 +26,7 @@
       h1 {
         font-size: 22px;
         margin-bottom: 30px;
-        color: #333;
+        color: #fff; /* Контрастный цвет для заголовка */
         text-align: center;
       }
 
@@ -51,24 +57,5 @@
       async
       type="text/javascript"
     ></script>
-
-    <script>
-      // Меняем цвет текста "Powered by ElevenLabs" на цвет фона
-      const paintBrandingToBackground = () => {
-        const interval = setInterval(() => {
-          const widget = document.querySelector('elevenlabs-convai');
-          if (widget && widget.shadowRoot) {
-            const branding = [...widget.shadowRoot.querySelectorAll('div')]
-              .find(el => el.textContent?.includes('Powered by ElevenLabs'));
-            if (branding) {
-              branding.style.color = '#f4f4f4'; // тот же цвет, что и у body
-              clearInterval(interval);
-            }
-          }
-        }, 500);
-      };
-
-      window.addEventListener('DOMContentLoaded', paintBrandingToBackground);
-    </script>
   </body>
 </html>
