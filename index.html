@@ -13,21 +13,27 @@
       }
 
       body {
-        background: #000000; /* Цвет текста надписи */
+        background: #9e9e9e; /* цвет фона — как у надписи */
         font-family: Arial, sans-serif;
-        padding: 40px 20px;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        min-height: 100vh;
+        justify-content: center;
       }
 
       h1 {
         font-size: 22px;
         margin-bottom: 30px;
-        color: #fff; /* Контрастный цвет для заголовка */
+        color: #fff;
         text-align: center;
+      }
+
+      .widget-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
       }
 
       elevenlabs-convai {
@@ -36,10 +42,6 @@
       }
 
       @media (max-width: 600px) {
-        body {
-          padding: 30px 10px;
-        }
-
         h1 {
           font-size: 20px;
           margin-bottom: 20px;
@@ -50,7 +52,9 @@
   <body>
     <h1>🎤 Demo Voice Agent for Your Business</h1>
 
-    <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
+    <div class="widget-wrapper">
+      <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
+    </div>
 
     <script
       src="https://elevenlabs.io/convai-widget/index.js"
