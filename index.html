@@ -35,6 +35,15 @@
         max-width: 420px;
       }
 
+      /* Скрываем подпись "Powered by ElevenLabs" */
+      a[href*="elevenlabs.io"],
+      div[style*="powered by elevenlabs"],
+      div:has(> a[href*="elevenlabs.io"]) {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+      }
+
       @media (max-width: 600px) {
         body {
           padding: 30px 10px;
@@ -50,7 +59,7 @@
   <body>
     <h1>🎤 Demo Voice Agent for Your Business</h1>
 
-    <!-- ВСТАВЬ СВОЙ AGENT-ID -->
+    <!-- ВСТАВЬ СВОЙ AGENT-ID НИЖЕ -->
     <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
     <script
       src="https://elevenlabs.io/convai-widget/index.js"
