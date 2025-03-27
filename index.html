@@ -3,32 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <title>Demo Voice Agent for Your Business</title>
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <style>
-      body {
+      * {
+        box-sizing: border-box;
         margin: 0;
-        background-color: #f4f4f4;
+        padding: 0;
+      }
+
+      body {
+        background: #f4f4f4;
         font-family: Arial, sans-serif;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        padding: 20px;
       }
 
       h1 {
-        font-size: 24px;
-        color: #333;
+        font-size: 22px;
         margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      elevenlabs-convai {
+        width: 100%;
+        max-width: 420px;
       }
     </style>
   </head>
   <body>
     <h1>🎤 Demo Voice Agent for Your Business</h1>
 
-    <!-- ВСТАВЬ СЮДА СВОЙ AGENT-ID -->
+    <!-- ВСТАВЬ СВОЙ AGENT-ID НИЖЕ -->
     <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
-    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    <script
+      src="https://elevenlabs.io/convai-widget/index.js"
+      async
+      type="text/javascript"
+    ></script>
   </body>
 </html>
