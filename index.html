@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
       body {
         background: #f4f4f4;
         font-family: Arial, sans-serif;
@@ -50,14 +44,31 @@
   <body>
     <h1>🎤 Demo Voice Agent for Your Business</h1>
 
-    <!-- ВСТАВЬ СЮДА СВОЙ AGENT ID -->
     <elevenlabs-convai agent-id="dkzJpXyY8RJmtIXZqGjh"></elevenlabs-convai>
 
-    <!-- Загрузка официального виджета -->
     <script
       src="https://elevenlabs.io/convai-widget/index.js"
       async
       type="text/javascript"
     ></script>
+
+    <script>
+      // Меняем цвет текста "Powered by ElevenLabs" на цвет фона
+      const paintBrandingToBackground = () => {
+        const interval = setInterval(() => {
+          const widget = document.querySelector('elevenlabs-convai');
+          if (widget && widget.shadowRoot) {
+            const branding = [...widget.shadowRoot.querySelectorAll('div')]
+              .find(el => el.textContent?.includes('Powered by ElevenLabs'));
+            if (branding) {
+              branding.style.color = '#f4f4f4'; // тот же цвет, что и у body
+              clearInterval(interval);
+            }
+          }
+        }, 500);
+      };
+
+      window.addEventListener('DOMContentLoaded', paintBrandingToBackground);
+    </script>
   </body>
 </html>
